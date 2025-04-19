@@ -13,6 +13,7 @@
         ignore_empty_message = false; # Ignore new tasks that don't contain a message
         clear_on_detach =
           # Clear notification group when LSP server detaches
+          # lua
           ''
             function(client_id)
               local client = vim.lsp.get_client_by_id(client_id)
@@ -21,6 +22,7 @@
           '';
         notification_group =
           # How to get a progress message's notification group key
+          # lua
           ''
             function(msg) return msg.lsp_client.name end
           '';
@@ -43,15 +45,21 @@
           icon_style = "Question"; # Highlight group for group icons
           priority = 30; # Ordering priority for LSP notification group
           skip_history = true; # Whether progress notifications should be omitted from history
-          format_message = ''
-            require ("fidget.progress.display").default_format_message
-          ''; # How to format a progress message
-          format_annote = ''
-            function (msg) return msg.title end
-          ''; # How to format a progress annotation
-          format_group_name = ''
-            function (group) return tostring (group) end
-          ''; # How to format a progress notification group's name
+          format_message =
+            # lua
+            ''
+              require ("fidget.progress.display").default_format_message
+            ''; # How to format a progress message
+          format_annote =
+            # lua
+            ''
+              function (msg) return msg.title end
+            ''; # How to format a progress annotation
+          format_group_name =
+            # lua
+            ''
+              function (group) return tostring (group) end
+            ''; # How to format a progress notification group's name
           overrides = {
             rust_analyzer = {
               name = "rust-analyzer";
@@ -65,13 +73,15 @@
         history_size = 128; # Number of removed messages to retain in history
         override_vim_notify = true;
         redirect = {
-          __raw = ''
-            function(msg, level, opts)
-              if opts and opts.on_open then
-                return require("fidget.integration.nvim-notify").delegate(msg, level, opts)
+          __raw =
+            # lua
+            ''
+              function(msg, level, opts)
+                if opts and opts.on_open then
+                  return require("fidget.integration.nvim-notify").delegate(msg, level, opts)
+                end
               end
-            end
-          '';
+            '';
         };
         configs = {
           default = {
