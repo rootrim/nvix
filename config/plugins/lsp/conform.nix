@@ -82,6 +82,12 @@
           '';
         notify_on_error = true;
         formatters_by_ft = {
+          cpp = [
+            "clang-format"
+          ];
+          c = [
+            "clang-format"
+          ];
           html = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
@@ -162,6 +168,9 @@
           };
           bicep = {
             command = "${lib.getExe pkgs.bicep}";
+          };
+          clang-format = {
+            command = "${lib.getExe' pkgs.clang-tools "clang-format"}";
           };
           #yamlfmt = {
           #  command = "${lib.getExe pkgs.yamlfmt}";

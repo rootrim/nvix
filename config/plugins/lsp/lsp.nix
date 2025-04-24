@@ -19,6 +19,12 @@
           installCargo = false;
           installRustc = false;
         };
+        clangd = {
+          enable = true;
+        };
+        cmake = {
+          enable = true;
+        };
         html = {
           enable = true;
         };
