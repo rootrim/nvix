@@ -38,6 +38,7 @@ _: {
     ./plugins/lsp/lsp.nix
     ./plugins/lsp/conform.nix
     ./plugins/lsp/fidget.nix
+    ./plugins/lsp/rustaceanvim.nix
 
     # Git
     ./plugins/git/lazygit.nix
@@ -52,5 +53,6 @@ _: {
     ./plugins/utils/obsidian.nix
     ./plugins/utils/toggleterm.nix
     ./plugins/utils/web-devicons.nix
+    ./plugins/utils/hardtime.nix
   ];
 }

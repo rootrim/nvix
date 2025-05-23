@@ -88,6 +88,9 @@
           c = [
             "clang-format"
           ];
+          arduino = [
+            "clang-format"
+          ];
           html = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
