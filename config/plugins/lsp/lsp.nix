@@ -14,11 +14,6 @@
       enable = true;
       inlayHints = true;
       servers = {
-        #rust_analyzer = {
-        #  enable = true;
-        #  installCargo = false;
-        #  installRustc = false;
-        #};
         clangd = {
           enable = true;
         };
