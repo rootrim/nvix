@@ -14,6 +14,9 @@
       enable = true;
       inlayHints = true;
       servers = {
+        qmlls = {
+          enable = true;
+        };
         clangd = {
           enable = true;
         };
