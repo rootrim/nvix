@@ -29,6 +29,9 @@
         html = {
           enable = true;
         };
+        cssls = {
+          enable = true;
+        };
         lua_ls = {
           enable = true;
         };
