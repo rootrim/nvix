@@ -20,6 +20,9 @@
         clangd = {
           enable = true;
         };
+        csharp_ls = {
+          enable = true;
+        };
         arduino_language_server = {
           enable = true;
         };
